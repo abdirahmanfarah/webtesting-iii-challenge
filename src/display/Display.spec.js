@@ -17,6 +17,10 @@ test('if gate is open or closed', () => {
 })
 
 test('displays Closed', () => {
-  const successClosed = queryByText(/closed/i);
-  expect(successClosed).toBeNull()
+  const successClosedMock = jest.fn();
+  const { queryByText }= render(
+    <Display closed={successClosedMock} />
+  ) 
+  // queryByDisplayValue(/closed/i);
+  // expect(successClosed).toHaveBeenCalled();
 })
